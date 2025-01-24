@@ -1,5 +1,5 @@
 # Photovoltaic view
-The PV View 7 project serves as a small data monitor for photovoltaic power plants. Data without mqtt source. In general, it can be used for any photovoltaic power plant. One possible source is e.g. the solax gateway, which provides data from the solar power plant to a predefined mqtt topic (see [solax gtw](https://github.com/xventus/solax_gtw)).  The project is written directly for the ESP IDF SDK. 
+The PV View 7 project serves as a small data monitor for photovoltaic power plants. Data with mqtt source. In general, it can be used for any photovoltaic power plant. One possible source is e.g. the solax gateway, which provides data from the solar power plant to a predefined mqtt topic (see [solax gtw](https://github.com/xventus/solax_gtw)).  The project is written directly for the ESP IDF SDK. 
 ## Hardware
 This view is based on the ESP32-S3 7inch Capacitive Touch Display.
 
