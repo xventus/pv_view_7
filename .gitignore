@@ -1,0 +1,9 @@
+# Ignore build directory
+build/
+
+# Ignore managed_components directory
+managed_components/
+
+# Generated files
+# sdkconfig
+sdkconfig.old

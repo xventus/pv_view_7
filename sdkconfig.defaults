@@ -1,0 +1,153 @@
+# Sets the default CPU frequency of the ESP32 to 240 MHz for maximum performance.
+CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y
+
+### settings define ESP-IDF-specific configurations      ###
+
+# specifies that the target device 
+CONFIG_IDF_TARGET="esp32s3"
+
+# Sets the data cache line size of the ESP32-S3 to 64 bytes, optimizing memory access and performance.
+CONFIG_ESP32S3_DATA_CACHE_LINE_64B=y
+
+# Enables experimental features in ESP-IDF that are not yet fully tested or officially supported.
+CONFIG_IDF_EXPERIMENTAL_FEATURES=y
+
+# Enables compiler optimizations focused on performance, ensuring the code runs as fast as possible, potentially at the cost of larger binary size.
+CONFIG_COMPILER_OPTIMIZATION_PERF=y
+
+# ------------------------------------------------------- #
+
+# Overrides the detected flash size with a manually specified value.
+CONFIG_SPI_FLASH_SIZE_OVERRIDE=y
+
+# ------------------------------------------------------- #
+
+### Settings configure parameters for flashing the ESP32 ### 
+
+# The device's flash size is set to 8 MB.
+CONFIG_ESPTOOLPY_FLASHSIZE_8MB=y
+
+# Flash mode set to QIO for high-speed quad data transfer.
+CONFIG_ESPTOOLPY_FLASHMODE_QIO=y
+
+# Flash frequency set to 120 MHz.
+CONFIG_ESPTOOLPY_FLASHFREQ_120M=y
+
+# ------------------------------------------------------- #
+
+### FREE RTOS settings                                  ### 
+
+# System tick will occur every millisecond
+CONFIG_FREERTOS_HZ = 1000
+
+# ------------------------------------------------------- # 
+
+### SPIRAM is external RAM connected via SPI/QSPI       ### 
+
+# Enables fetching instructions from external SPI RAM for extended memory usage.
+CONFIG_SPIRAM_FETCH_INSTRUCTIONS=y
+
+# Places read-only data (RODATA) into external SPI RAM to free up internal memory.
+CONFIG_SPIRAM_RODATA=y
+
+# Allows DMA access to external SPI RAM for improved data transfer efficiency.
+CONFIG_SPIRAM_DMA_ALLOW=y
+
+# Enables support for external SPI RAM.
+CONFIG_SPIRAM=y
+
+# Sets the SPI RAM mode to Octal (OCT) for faster data transfers using 8 data lines.
+CONFIG_SPIRAM_MODE_OCT=y
+
+# Sets the SPI RAM operating speed to 120 MHz.
+CONFIG_SPIRAM_SPEED_120M=y
+
+
+# ------------------------------------------------------- # 
+### SPIFFS (SPI Flash File System)                      ### 
+ 
+
+# Enables support for the SPIFFS file system on the device.
+CONFIG_SPIFFS_SUPPORT=y
+
+# This is where the SPIFFS file system starts in the device's flash.
+CONFIG_SPIFFS_BASE_ADDR=0xC10000
+
+# Defines the SPIFFS file system size as 0x3F0000 bytes (approximately 4 MB).
+CONFIG_SPIFFS_SIZE=0x3F0000
+
+# Sets the SPIFFS page size to 256 bytes, determining the size of individual data pages used in the file system.
+CONFIG_SPIFFS_PAGE_SIZE=256
+
+# Sets the SPIFFS block size to 4096 bytes (4 KB), defining the size of an erasable block in the file system.
+CONFIG_SPIFFS_BLOCK_SIZE=4096
+
+# ------------------------------------------------------- # 
+### Partition                                           ###
+
+# Enables the use of a custom partition table instead of the default ESP-IDF partition table.
+CONFIG_PARTITION_TABLE_CUSTOM=y
+
+# Specifies the filename for the custom partition table when CONFIG_PARTITION_TABLE_CUSTOM=y is enabled.
+CONFIG_PARTITION_TABLE_CUSTOM_FILENAME="partition_table/partition_table.csv"
+
+# Specifies the partition table file to use. If CONFIG_PARTITION_TABLE_CUSTOM=y, this is the same as CONFIG_PARTITION_TABLE_CUSTOM_FILENAME.
+# CONFIG_PARTITION_TABLE_FILENAME="partition_table/partition_table.csv"
+
+
+# ------------------------------------------------------- #
+### LVGL SETTINGS                                       ###
+
+# Enables the use of user-defined data in LVGL objects.
+CONFIG_LV_USE_USER_DATA=y
+
+#  Enables support for the chart widget.
+CONFIG_LV_USE_CHART=y
+
+# Enables the performance monitor feature in LVGL.
+CONFIG_LV_USE_PERF_MONITOR=n
+
+# Specifies whether standard library functions (memcpy and memset) should be used in LVGL 
+CONFIG_LV_MEMCPY_MEMSET_STD=y
+
+# Enables the use of a custom memory allocator in LVGL instead of the default malloc and free.
+CONFIG_LV_MEM_CUSTOM=y
+
+# Enables the Montserrat font 
+CONFIG_LV_FONT_MONTSERRAT_8=y
+CONFIG_LV_FONT_MONTSERRAT_12=y
+CONFIG_LV_FONT_MONTSERRAT_16=y
+CONFIG_LV_FONT_MONTSERRAT_20=y
+CONFIG_LV_FONT_MONTSERRAT_40=y
+CONFIG_LV_FONT_MONTSERRAT_30=y
+
+
+# Supports fast memory and higher performance.
+CONFIG_LV_ATTRIBUTE_FAST_MEM=y
+
+# ------------------------------------------------------- #
+
+# Ensures LCD RGB restarts are synchronized with the VSYNC signal to prevent screen tearing.
+# Leads to better image stability if the system is under load, but causes horizontal shift for certain displays.
+#CONFIG_LCD_RGB_RESTART_IN_VSYNC=y
+
+# ------------------------------------------------------- #
+### HTTP                                                ###
+
+# Sets the maximum HTTP request header length the server can handle.
+CONFIG_HTTPD_MAX_REQ_HDR_LEN=1024
+
+# Sets the maximum length of the URI the HTTP server can handle.
+CONFIG_HTTPD_MAX_URI_LEN=1024
+
+# Sets the buffer length for storing HTTP response headers.
+CONFIG_HTTPD_RESP_HDR_BUF_LEN=512
+
+# Disables the delay before sending an HTTP error response.
+CONFIG_HTTPD_ERR_RESP_NO_DELAY=y
+
+# Sets the buffer size for purging invalid or excess HTTP request data.
+CONFIG_HTTPD_PURGE_BUF_LEN=1024
+
+
+
