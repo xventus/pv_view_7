@@ -22,10 +22,10 @@ Note: In the graph the information about "Max" indicates the maximum energy cons
 
 <table>
     <tr>
-        <td><img src="image/4.jpg" alt="case" width="300"></td>
-        <td><img src="image/1.jpg" alt="case" width="300"></td>
-        <td><img src="image/2.jpg" alt="case" width="300"></td>
-        <td><img src="image/3.jpg" alt="case" width="300"></td>
+        <td><img src="images/4.jpg" alt="case" width="300"></td>
+        <td><img src="images/1.jpg" alt="case" width="300"></td>
+        <td><img src="images/2.jpg" alt="case" width="300"></td>
+        <td><img src="images/3.jpg" alt="case" width="300"></td>
      </tr>
 </table>
 
